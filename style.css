@@ -1,0 +1,387 @@
+header{
+    display: flex; 
+    justify-content: space-between; /* creates space between logo and nav */
+    align-items: center;
+    padding: 10px 15px; 
+    background-color: #752d2d;
+}
+
+header .logo img{
+    opacity: 0.65;
+    height: 100px;
+}
+
+
+/*navigation bar*/
+nav ul{
+    list-style: none;
+    display: flex; 
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    margin-right: 60px; 
+    display:flex;
+    align-items: center;
+}
+
+nav ul li a{
+    color: #343131;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #994C00;
+    color: #0a0808
+
+}
+
+nav a:hover{
+    background-color: #343131;
+    color:white;
+}
+/*Title*/
+.title-section{
+    text-align: center;
+    padding: 20px;
+    background-color: #994C00;
+    color: black;
+
+}
+.title-section h1{
+    font-size: 2rem;
+    font-style: italic;
+    font-family: cursive;
+    border: 3px solid black;
+}
+/*Banner image*/
+.hero {
+    background-color: #994C00;
+    border-radius: 1px;
+    height: 450px;
+    width: auto;
+    display: flex; 
+    justify-content: center; 
+    align-items: top; 
+  }
+
+
+/*changing menu display*/
+.menu{
+    padding: 20px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #752d2d;
+    font-family: 'cursive','Times New Roman', Times, serif;
+  }
+
+.menu h1{
+    text-align: center;
+    font-size: 5rem;
+    font-style: italic;
+    color: rgb(47, 25, 25);
+}
+
+.menu-cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background-color:#994C00;
+    border-radius: 8px;
+    padding: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.card h2{
+    font-size: 2.2rem;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #141414;
+    margin-top: 90px;
+
+}
+
+.card p {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+    font-style:italic;
+    font-weight: bold;
+}
+
+/*Gallery images*/
+
+.gallery {
+    text-align: center;
+    padding: 20px;
+    background-color: #994C00;
+    justify-content: center;
+}
+
+.gallery h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+
+.slide{
+    border-radius: 8px;
+    position: relative; 
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 0 120px;
+}
+.slide img{
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: black;
+
+}
+
+/*back & next buttons*/
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(7, 3, 3, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.prev{
+    left:10px;
+}
+.next{
+    right: 10px;
+}
+  
+
+/*About Us section*/
+
+.about{
+    background-color: #994C00;
+    text-align: center;
+}
+
+.about h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color:goldenrod;
+
+}
+
+.about p{
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/*Google Maps*/
+.contact h1{
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 60px;
+}
+.contact{
+    background-color: #752d2d;
+    color: goldenrod;
+    text-align: center;
+    padding: 100px 30px;
+}
+
+.Google-maps iframe{
+    width: 100%;
+    height: 350px;
+    border: none;
+}
+
+/*User Feedback Text Form*/
+.form{
+    background-color: #752d2d;
+    text-align: center; 
+    font-weight: bold; 
+    padding: 20px 20px;
+    margin-top: 80px;
+    border: 5px solid rgb(0, 0, 0); 
+}
+
+/*Social Media class*/
+footer{
+    background-color: #752d2d;
+    color:goldenrod; 
+    padding: 20px;
+    text-align: center; 
+}
+
+.footer-content{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start;  
+}
+
+.social-media ul{
+    list-style-type: none;
+}
+
+.social-media a{
+    color: goldenrod; 
+    margin-right: 40px;
+    padding-top: 20px;
+}
+
+/*Hamburger Menu*/
+.hamburger{
+    cursor:pointer;
+    display: none;
+    font-size: 25px;
+}
+
+/*mobile home page*/
+@media (max-width: 760px){
+    nav ul{
+        width: 100%;
+        text-align: center; 
+        display: none;
+    }
+
+    nav.active ul {
+        display: block;
+    }
+
+    nav ul li{
+        margin-bottom: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero{
+        width: 100%;
+        overflow: hidden; 
+        position: relative;
+    }
+
+    .footer-content{
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-content .social-media, 
+    .footer-content .hours {
+        margin-bottom: 20px;
+        padding-left: 70px;
+    }
+    .footer-content li{
+        flex-direction: column;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+    .logo img{
+        height: 60px;
+        width: auto;
+    }
+    .slide{
+        margin: 0 20px;
+    }
+
+    .slide img{
+        width: 100%;
+        height: auto; 
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+
+    .gallery h1{
+        font-size: 1.5rem;
+    }
+
+    button{
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+
+/*mobile Menu page*/
+@media(max-width: 760px){
+    .card{
+        width: 90%;
+        max-width: none;
+        padding: 27px;
+        object-position: center;
+    }
+
+    .menu-img{
+        width: 100%;
+        height: 100%;
+        max-height: 500px;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+
+    .menu-cards{
+        width: 90%;
+        object-position: center;
+        justify-content: center;
+    }
+    h1{
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+}
+
+/*mobile about page*/
+
+@media(max-width: 760px){
+    .about img{
+
+        width: 90%;
+        position: relative;
+        display: block;
+        margin: 18px;
+
+    }
+    .about p{
+        font-weight: bold;
+    }
+}
+
+/*mobile Contact page*/
+
+@media(max-width: 760px){
+    .Google-map iframe{
+        padding-right: 30px;
+        display: block;
+        height: 300px;
+        width: 100%;
+    }
+
+    .form input, .form textarea{
+        width: 100%;
+    }
+}
+
+    
+
+
+
