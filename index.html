@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\asati\OneDrive\Documents\html\style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src ="C:\Users\asati\OneDrive\Documents\html\images\burger.png" height = "100" alt="Restaurant Logo">
+        </div>
+        <div class="hamburger" onclick="Menu()">&#9776;</div>      
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="title-section">
+        <h1>Welcome to Skovorodka Restaurant!</h1>
+    </section>
+    <section class="hero">
+        <img src="C:\Users\asati\OneDrive\Documents\html\images\skovorodka_logo.jpg" alt="Display Restaurant Img">
+    </section>
+
+    <section class="gallery">
+        <h1> Images</h1>
+        <div class ="slide">
+            <img src="C:\Users\asati\OneDrive\Documents\html\images\skovorodka-dining-room.jpg" alt="img1">
+            <img src="C:\Users\asati\OneDrive\Documents\html\images\entrance.jpg" alt="img2">
+            <img src="C:\Users\asati\OneDrive\Documents\html\images\caption.jpg" alt="img3">
+            <img src="C:\Users\asati\OneDrive\Documents\html\images\interior-of-restaurant.jpg" alt="img4">
+            <img src="C:\Users\asati\OneDrive\Documents\html\images\photo0jpg.jpg" alt="img5">
+            <button class="next" onclick="move(1)">&#10095;</button>
+            <button class="prev" onclick="move(-1)">&#10094;</button>
+        </div> 
+    </section> 
+    
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <h3>Follow Us:</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/SkovorodkaNY" target="_blank"> Facebook </a></li>
+                    <li><a href="https://www.instagram.com/skovorodkacafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/cafe-skovorodka/about/" target="_blank">LinkedIn</a></li>
+                </ul>
+
+            </div>
+
+            <div class="hours">
+                <h3>Hours:</h3>
+                <p><b>Mon-Sun: 11AM to 10PM</b></p>
+
+            </div>
+        </div>
+    </footer>
+    <script src="C:\Users\asati\OneDrive\Documents\html\Script.js"></script>
+</body>
+</html>
