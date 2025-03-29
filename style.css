@@ -51,7 +51,10 @@ nav a:hover{
     font-size: 2rem;
     font-style: italic;
     font-family: cursive;
-    border: 3px solid black;
+    border: 2px lab(lightness a b) black;
+    background-color: #752d2d;
+    color: goldenrod;
+    padding: 10px;
 }
 /*Banner image*/
 .hero {
@@ -206,7 +209,14 @@ button:hover {
     color: goldenrod;   
     text-align: center;
 }
-
+.about .about-content {
+    background-color: #994C00; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin: 0 auto; 
+    width: 900px; 
+}
 .about h1{
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -229,10 +239,10 @@ button:hover {
     text-align: center;
 }
 .about img{
-    width: auto;
-    height: auto;
     border-radius: 10px;
     margin: 20px auto; 
+    width: 900px;
+    height: auto;
 }
 
 
@@ -247,13 +257,25 @@ button:hover {
     background-color: #752d2d;
     color: goldenrod;
     text-align: center;
-    padding: 100px 30px;
+    padding: 40px 30px;
+}
+.contact .contact-content {
+    background-color: #994C00; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin: 0 auto; 
+    width: 900px; 
 }
 
 .Google-maps iframe{
     width: 100%;
     height: 350px;
-    border: none;
+    border: 4px solid rgb(0, 0, 0); 
+    border-radius: 10px;
+    box-shadow: #752d2d 0px 0px 10px;
+    margin: 0 auto;
+
 }
 
 /*User Feedback Text Form*/
@@ -263,14 +285,14 @@ button:hover {
     font-weight: bold; 
     padding: 20px 20px;
     margin-top: 80px;
-    border: 5px solid rgb(0, 0, 0); 
+    border: 4px solid rgb(0, 0, 0); 
 }
 
 /*Social Media class*/
 footer{
     background-color: #752d2d;
     color:goldenrod; 
-    padding: 20px;
+    padding: 20px 0px;
     text-align: center; 
 }
 
@@ -278,16 +300,48 @@ footer{
     display: flex; 
     justify-content: space-between; 
     align-items: flex-start;  
+    margin: 0 auto;
 }
 
+.social-media {
+    flex: 1;
+    margin: 8px;
+}
 .social-media ul{
-    list-style-type: none;
+    list-style: none;
 }
-
+.social-media h3{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: goldenrod; 
+    font-weight: bold;
+    font-style: italic;
+}
 .social-media a{
     color: goldenrod; 
-    margin-right: 40px;
-    padding-top: 20px;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.social-media a:hover{
+    color: #343131;
+    text-decoration: underline;
+}
+
+.hours{
+    flex: 1;
+    margin: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+.hours h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.hours p {
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 /*Hamburger Menu*/
@@ -297,6 +351,8 @@ footer{
     font-size: 25px;
 
 }
+
+/*mobile hamburger menu*/
 
 /*mobile home page*/
 @media (max-width: 760px){
