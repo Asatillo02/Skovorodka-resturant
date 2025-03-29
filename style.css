@@ -67,23 +67,27 @@ nav a:hover{
 
 /*changing menu display*/
 .menu{
-    padding: 20px 20px;
+    padding: 20px;
+    margin: 0 auto;
     text-align: center;
-    margin-bottom: 20px;
     background-color: #752d2d;
     font-family: 'cursive','Times New Roman', Times, serif;
   }
 
 .menu h1{
-    text-align: center;
-    font-size: 5rem;
-    font-style: italic;
-    color: rgb(47, 25, 25);
+    font-size: 3rem;
+    color: goldenrod;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .menu-cards{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .card {
@@ -94,18 +98,27 @@ nav a:hover{
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
+    width: 375px;
+    height: 350px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
-.card h2{
+.card h2 {
     font-size: 2.2rem;
+    font-style: italic;
+    background-color: #752d2d;
+    color: goldenrod;
+    padding: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px; 
+    border: 2px solid rgb(101, 80, 26); 
+    text-align: center; 
 }
 
 .card h3 {
     font-size: 1.8rem;
-    color: #141414;
+    color:goldenrod;
     margin-top: 90px;
 
 }
@@ -121,10 +134,13 @@ nav a:hover{
 /*Gallery images*/
 
 .gallery {
-    text-align: center;
+    text-align: center; /* Centers the content inside the gallery */
     padding: 20px;
     background-color: #994C00;
-    justify-content: center;
+    display: flex; /* Use flexbox for centering */
+    flex-wrap: wrap; /* Allows images to wrap to the next line if needed */
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Centers images vertically */
 }
 
 .gallery h1{
@@ -148,7 +164,13 @@ nav a:hover{
     border-radius: 10px;
     border-style: groove;
     border-color: black;
-
+}
+.gallery img {
+    width: 100%; 
+    height: 450px; 
+    object-fit: cover;
+    margin: 10px; 
+    border-radius: 10px;
 }
 
 /*back & next buttons*/
@@ -180,22 +202,39 @@ button:hover {
 /*About Us section*/
 
 .about{
-    background-color: #994C00;
+    background-color: #752d2d;
+    color: goldenrod;   
     text-align: center;
 }
 
 .about h1{
     font-size: 2.5rem;
     margin-bottom: 20px;
+    margin: 0;
     color:goldenrod;
 
 }
 
 .about p{
     font-style: italic;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: left;
 }
+.hours p{
+    font-size: 2rem;
+    color: goldenrod;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
+}
+.about img{
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px auto; 
+}
+
 
 /*Google Maps*/
 .contact h1{
@@ -256,6 +295,7 @@ footer{
     cursor:pointer;
     display: none;
     font-size: 25px;
+
 }
 
 /*mobile home page*/
@@ -317,9 +357,10 @@ footer{
         font-size: 1.5rem;
     }
 
-    button{
-        font-size: 1.5rem;
-        padding: 8px;
+        button{
+            font-size: 1.5rem;
+            padding: 8px;
+        }
     }
 
 /*mobile Menu page*/
@@ -380,8 +421,3 @@ footer{
         width: 100%;
     }
 }
-
-    
-
-
-

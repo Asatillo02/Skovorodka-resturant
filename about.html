@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-
 </head>
+
+<!-- <body>
+ -->
 <body>
+    <header>
+        <div class="logo">
+            <img src = "images/burger.png" height = "100" alt="Restaurant Logo">
+        </div>
+        <div class="hamburger" onclick="Menu()">&#9776;</div>      
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="about">
         <h1>About Us:</h1>
         <p>Skovorodka Restaurant was founded in 2002. Skovorodka is a lively Russian restaurant in Brighton Beach, renowned 
@@ -18,10 +35,14 @@
         <p> Our goal is to offer a distinctive dining experience in a warm and inviting atmosphere. 
             Guests are always greeted with genuine hospitality and invited to dine in authentic Russian and European dishes, 
             expertly prepared to ensure an unforgettable dining experience. </p>
-        <h1>Hours</h1>
-        <p><b>Mon-Sun: 11AM to 10PM</b></p>
+        <h1>Hours:</h1>
+        <div class="hours">
+            <p><b>Mon-Sun: 11AM to 10PM</b></p>
+        </div>
     
         <img src="images/outside.jpg" alt="exterior image">;
-    </section>   
+    </section> 
+    
+    
 </body>
 </html>
