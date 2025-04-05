@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src = "images/burger.png" height = "100" alt="Restaurant Logo">
+        </div>
+        <div class="hamburger" onclick="Menu()">&#9776;</div>      
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart">
+                <a href="cart.html">
+                    <img src="images/shopping_cart.png" alt="cart">
+                </a>
+                <span class="cart-value">0</span> <!-- Cart value placeholder -->
+            </div>
+        </nav>
+    </header>
+    <div class="cart-body">
+        <h1>Your Shopping Cart</h1>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <div class="cart-total">
+        <button type="button" class="clear-cart">Empty Cart</button>
+         
+         <div class="subtotal">
+            <h4>Subtotal: $0.00</h4>
+         </div>
+
+         <div class="tax">
+            <h4>Tax: $0.00</h4>  
+        </div> 
+        <div class="total">
+            <h4>Total: $0.00</h4>
+        </div>     
+    </div>
+    <script src="Script.js"></script>
+</body>
+</html>

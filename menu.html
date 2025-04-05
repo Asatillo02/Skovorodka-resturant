@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="Script.js" defer></script>
 
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src = "images/burger.png" height = "100" alt="Restaurant Logo">
+            <img src="images/burger.png" height="100" alt="Restaurant Logo">
         </div>
-        <div class="hamburger" onclick="Menu()">&#9776;</div>      
+        <div class="hamburger" onclick="Menu()">&#9776;</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -22,75 +22,157 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="cart">
+                <a href="cart.html">
+                    <img src="images/shopping_cart.png" alt="cart">
+                </a>
+                <span class="cart-value">0</span>
+            </div>
         </nav>
     </header>
-</body>
-<section class="menu">
-    <script src="script.js"></script>
-    <h1> Menu</h1>
-    <div class="menu-cards">
 
-        <div class="card">
-            <h2> MAIN COURSE</h2>
- 
-            <h3>Smoked Semga</h3>
-            <img src="images/Semga.jpg" alt="Somked Semga">
-            <p>cold-smoked steelhead trout that's cured with salt</p>
-            <p class="price">$19.99</p>
+    <section class="menu">
+        <h1>Menu</h1>
+        <div class="menu-cards">
 
-            <h3>Deluxe Charcuterie Platter</h3>
-            <img src="images/charcuterie Board.jpg" alt="Charcuterie Platter">
-            <p>Elegant set of dry cured salami, assorted cheeeses, Prosciutto, berries, grapes, crackers, nuts</p>
-            <p class="price">$33.99</p>
+            <div class="card">
+                <h2>MAIN COURSE</h2>
 
-            <h3>Eggplant Caviar</h3>
-            <img src="images/eggplant caviar.jpg" alt="Eggplant">
-            <p>An eggplant based spread, side, or dip. Made with roasted eggplant with hint of garlic</p>
-            <p class="price">$14.99</p>
+                <h3>Smoked Semga</h3>
+                <img src="images/Semga.jpg" alt="Smoked Semga">
+                <p>Cold-smoked steelhead trout that's cured with salt.</p>
+                <p class="price">$19.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart" 
+                        data-image="images/Semga.jpg" 
+                        data-name="Smoked Semga" 
+                        data-price="$19.99">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <h3>Basturma</h3>
-            <img src="images/Basturma.jpg" alt="Basturma">
-            <p>a cured, air-dried beef that's seasoned with paprika</p>
-            <p class="price">$19.99</p>
+                <h3>Deluxe Charcuterie Platter</h3>
+                <img src="images/charcuterie Board.jpg" alt="Charcuterie Platter">
+                <p>Elegant set of dry-cured salami, assorted cheeses, Prosciutto, berries, grapes, crackers, nuts.</p>
+                <p class="price">$33.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart" 
+                        data-image="images/charcuterie Board.jpg" 
+                        data-name="Deluxe Charcuterie Platter" 
+                        data-price="$33.99">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <h3>Eggplant Caviar</h3>
+                <img src="images/eggplant caviar.jpg" alt="Eggplant Caviar">
+                <p>An eggplant-based spread, side, or dip. Made with roasted eggplant with a hint of garlic.</p>
+                <p class="price">$14.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/eggplant caviar.jpg"
+                        data-name="Eggplant Caviar"
+                        data-price="$14.99">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <h2> APPETIZERS</h2>
+                <h3>Basturma</h3>
+                <img src="images/Basturma.jpg" alt="Basturma">
+                <p>A cured, air-dried beef that's seasoned with paprika.</p>
+                <p class="price">$19.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/Basturma.jpg"
+                        data-name="Basturma"
+                        data-price="$19.99">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <h3>Blintzes with meat</h3>
-            <img src="images/blintzes.jpg" alt="Blintzes">
-            <p>crispy pan-fried pocket shape Seasoned ground beef or chicken pancakes filled</p>
-            <p class="price"> 13.99</p>
+                <h2>APPETIZERS</h2>
 
-            <h3>Pan-Fried Potatoes w/ Mushrooms</h3>
-            <img src="images/pan fried potatoes.jpg" alt="Pan-Fried Potatoes">
-            <p>fried and sliced potatoes with mushroom seasoned with sald, pepper, and spices</p>
-            <p class="price">22.99 </p>
+                <h3>Blintzes with Meat</h3>
+                <img src="images/blintzes.jpg" alt="Blintzes">
+                <p>Crispy pan-fried pocket-shaped pancakes filled with seasoned ground beef or chicken.</p>
+                <p class="price">$13.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/blintzes.jpg"
+                        data-name="Blintzes with Meat"
+                        data-price="$13.99">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <h3>Mushroom Julien w/ Baked Cheese</h3>
-            <img src="images\mushroom julien.jpg" alt="Mushroom Julien w/ Baked Cheese">
-            <p>autéed mushrooms cooked in a creamy sauce, typically with onions and garlic included with melted cheese</p>
-            <p class="price">16.50</p>
+                <h3>Pan-Fried Potatoes w/ Mushrooms</h3>
+                <img src="images/pan fried potatoes.jpg" alt="Pan-Fried Potatoes">
+                <p>Fried and sliced potatoes with mushrooms seasoned with salt, pepper, and spices.</p>
+                <p class="price">$22.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/pan fried potatoes.jpg"
+                        data-name="Pan-Fried Potatoes w/ Mushrooms"
+                        data-price="$22.99">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <h2> BEVERAGES</h2>
+                <h3>Mushroom Julien w/ Baked Cheese</h3>
+                <img src="images/mushroom julien.jpg" alt="Mushroom Julien w/ Baked Cheese">
+                <p>Sautéed mushrooms cooked in a creamy sauce, typically with onions and garlic, topped with melted cheese.</p>
+                <p class="price">$16.50</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/mushroom julien.jpg"
+                        data-name="Mushroom Julien w/ Baked Cheese"
+                        data-price="$16.50">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <h3>Soda</h3>
-            <img src="images/soda.jpg" alt="Soda">
-            <p>all varies of family or kid sized soda</p>
-            <p class="price"> 3.99</p>
+                <h2>BEVERAGES</h2>
 
-            <h3>Coffee</h3>
-            <img src="images/coffee.jpg" alt="Coffee">
-            <p>Avaiable: A cup of espresso, black or regular Coffee </p>
-            <p class="price"> 3.49</p>
+                <h3>Soda</h3>
+                <img src="images/soda.jpg" alt="Soda">
+                <p>All varieties of family or kid-sized soda.</p>
+                <p class="price">$3.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/soda.jpg"
+                        data-name="Soda"    
+                        data-price="$3.99">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <h3>Tea</h3>
-            <img src="images/Tea.jpg" alt="Tea">
-            <p>Avaiable: green, rasberry, black</p>
-            <p class="price"> 2.99</p>
+                <h3>Coffee</h3>
+                <img src="images/coffee.jpg" alt="Coffee">
+                <p>Available: A cup of espresso, black, or regular coffee.</p>
+                <p class="price">$3.49</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/coffee.jpg"
+                        data-name="Coffee"
+                        data-price="$3.49">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <h3>Tea</h3>
+                <img src="images/Tea.jpg" alt="Tea">
+                <p>Available: Green, raspberry, black.</p>
+                <p class="price">$2.99</p>
+                <div class="cart">
+                    <button type="button" class="add-to-cart"
+                        data-image="images/Tea.jpg"
+                        data-name="Tea"
+                        data-price="$2.99">
+                        Add to Cart    
+                    </button>
+                </div>
+            </div>
         </div>
-
-
-    </div>
-</section>
-
+    </section>
 </body>
 </html>

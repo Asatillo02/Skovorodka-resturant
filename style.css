@@ -16,13 +16,13 @@ header .logo img{
 nav ul{
     list-style: none;
     display: flex; 
-    padding: 0;
-    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 nav ul li{
     margin-right: 60px; 
-    display:flex;
+    display:inline-block;
     align-items: center;
 }
 
@@ -37,6 +37,42 @@ nav ul li a{
 nav a:hover{
     background-color: #343131;
     color:white;
+}
+/*shopping cart*/
+.cart{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.cart a img {
+    width: 45px;
+    height: 45px;
+    margin-left: auto;
+    margin-bottom: 25px;
+    cursor: pointer;
+    padding: px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.cart a img:hover {
+    transform:perspective(100px) rotateY(-180deg);
+}
+
+.cart span {
+    position: relative;
+    bottom: 35px;
+    left: 20px;
+    background-color: #994C00; 
+    color: goldenrod; 
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 /*Title*/
 .title-section{
@@ -61,15 +97,16 @@ nav a:hover{
     border-radius: 1px;
     height: 450px;
     width: auto;
+    overflow: hidden;
     display: flex; 
+    
     justify-content: center; 
-    align-items: top; 
   }
 
 
 /*changing menu display*/
 .menu{
-    padding: 20px;
+    padding: 20px 20px;
     margin: 0 auto;
     text-align: center;
     background-color: #752d2d;
@@ -77,9 +114,9 @@ nav a:hover{
   }
 
 .menu h1{
-    font-size: 3rem;
+    font-size: 5rem;
     color: goldenrod;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -87,50 +124,93 @@ nav a:hover{
 .menu-cards{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
     justify-content: center;
-    padding: 20px;
+    padding: 100px;
+    margin-bottom: 70px;
+    
 }
 
 .card {
-    background-color:#994C00;
+    background-color: #994C00;
+    border: 3px solid goldenrod;
     border-radius: 8px;
-    padding: 80px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: italic;
+    justify-content: space-between; 
+    box-sizing: border-box;
+    padding: 70px;
 }
 
 .card img {
     width: 375px;
     height: 350px;
-    object-fit: cover;
-    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid goldenrod;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.card img:hover{
+    transform: scale(1.4);
 }
 
 .card h2 {
-    font-size: 2.2rem;
-    font-style: italic;
-    background-color: #752d2d;
+    font-size: 2.3rem;
     color: goldenrod;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid rgb(101, 80, 26); 
-    text-align: center; 
+    background-color: #752d2d;
+    margin-top: 100px;
+    margin-bottom: 5px;
+    padding: 20px 40%;
+    border: 2px solid goldenrod; 
+    border-radius:10px;
 }
 
 .card h3 {
     font-size: 1.8rem;
     color:goldenrod;
     margin-top: 90px;
-
+    margin-bottom: 5px;
 }
 
 .card p {
-    font-size: 1.5rem;
-    color: #000000;
+    font-size: 1.5rem; 
+    color: goldenrod; 
     margin-bottom: 10px;
-    font-style:italic;
-    font-weight: bold;
+    margin-top: -2px; 
+    opacity: 85%;
+    background-color: #994C00;
+    padding: 10px; 
+    border: 2px solid goldenrod;
+    border-radius: 10px; 
 }
+
+data{
+    display: none; /* Hides the data element in button*/
+}
+
+/*add to cart button*/
+
+.card .add-to-cart {
+    text-decoration: none;
+    margin-top: 30px;
+    background-color: #752d2d;
+    color: goldenrod;
+    border: 2px solid goldenrod;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 20px 80px;
+    white-space: nowrap;
+}
+
+.card .add-to-cart:hover {
+    background-color: #3b3024;
+}
+
 
 /*Gallery images*/
 
@@ -165,9 +245,9 @@ nav a:hover{
     border-radius: 10px;
     border-style: groove;
     border-color: black;
+    object-fit: cover;
 }
 .gallery img {
-    width: 100%; 
     height: 450px; 
     object-fit: cover;
     margin: 10px; 
@@ -207,8 +287,9 @@ button:hover {
     color: goldenrod;   
     text-align: center;
 }
-.about .about-content {
+.about-content {
     background-color: #994C00; 
+    border: 3px solid goldenrod;
     padding: 20px; 
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
@@ -218,22 +299,24 @@ button:hover {
 .about h1{
     font-size: 2.5rem;
     margin-bottom: 20px;
-    margin: 0;
-    color:goldenrod;
+    margin-top: 15px;
 
 }
 
 .about p{
     font-style: italic;
-    font-size: 2rem;
+    font-size: 1.4rem;
     line-height: 1.2;
     text-align: left;
+    margin: 0 auto;
+    padding: 20px;
 }
 .hours p{
     font-size: 2rem;
     color: goldenrod;
     margin-bottom: 20px;
     font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 .about img{
@@ -347,15 +430,150 @@ footer{
     cursor:pointer;
     display: none;
     font-size: 25px;
-
 }
 
 
-/*mobile home page*/
-@media (max-width: 760px){
-    nav ul{
+/*shopping Cart page*/
+.cart-body{
+    display: flex;
+    flex-direction: column;
+    border-color: goldenrod;
+    font-style: italic;
+    border-style: solid;
+    border-width: 5px;
+    margin: 0;
+    background-color: #752d2d; /* Same background as menu.html */
+    color: goldenrod;
+    font-family: 'cursive', 'Times New Roman', Times, serif;
+}
+.cart-total {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #752d2d;
+    color: goldenrod;
+    border-top: 2px solid goldenrod;
+    font-size: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cart-total h4 {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    margin: 5px 10px;
+    text-align: right;  
+}
+
+.total{
+    border-top: 0.2rem  goldenrod solid;  
+    border-radius: 1px;
+    margin-top: 15px;
+}
+/*empty cart button*/
+.cart-total button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-bottom:auto;
+    background-color: #994C00;
+    color: goldenrod;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-total button:hover {
+    background-color: #752d2d;
+}
+
+.added-to-cart-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    color: white;
+    padding: 25px;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1 rem;
+    font-style: italic;
+}
+
+.clear-cart {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #752d2d;
+    color: goldenrod;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative; /* Added to allow dynamic positioning */
+    top: 20px; /* Moves the button down */
+}
+
+.clear-cart:hover {
+    background-color: #994C00;
+}
+
+
+#cart-table{
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+}
+
+#cart-table th, td{
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid goldenrod;
+    border: 1px solid goldenrod;
+
+}
+.cart-image{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.quantity-container {
+    display: flex;
+    flex-direction: column; /* Stack quantity and button vertically */
+    align-items: center; /* Center-align the content */
+    gap: 10px; /* Add spacing between quantity and button */
+}
+
+.quantity-container .remove {
+    background-color: #752d2d;
+    color: goldenrod;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative; 
+    top:10px;
+}
+
+.quantity-container .remove:hover {
+    background-color: #994C00;
+}
+
+@media (max-width: 760px) {
+    nav ul {
         width: 100%;
-        text-align: center; 
+        text-align: center;
         display: none;
     }
 
@@ -363,7 +581,7 @@ footer{
         display: flex;
     }
 
-    nav ul li{
+    nav ul li {
         margin-bottom: 10px;
     }
 
@@ -371,29 +589,30 @@ footer{
         display: block;
     }
 
-    .hero{
+    .hero {
         width: auto;
         height: 350px;
-        overflow: hidden; 
+        overflow: hidden;
         justify-content: center;
     }
 
-    .footer-content{
-        display: flex; 
-        justify-content: space-between; 
-        align-items: flex-start;  
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
         margin: 0 auto;
     }
 
-    .logo img{
+    .logo img {
         height: 60px;
         width: auto;
     }
-    .slide{
+
+    .slide {
         margin: 0 15px;
     }
 
-    .slide img{
+    .slide img {
         width: auto;
         height: 350px;
         border: 1px solid black;
@@ -401,7 +620,7 @@ footer{
         justify-content: center;
     }
 
-    .gallery h1{
+    .gallery h1 {
         font-size: 1.5rem;
         margin-bottom: 10px;
         top: 10px;
@@ -409,30 +628,29 @@ footer{
         object-fit: cover;
         color: goldenrod;
     }
-    .gallery img{
+
+    .gallery img {
         width: 100%;
         height: 200px;
         margin: 10px 0;
         border-radius: 10px;
         border: 1px solid black;
         object-fit: cover;
-
-        button{
-            font-size: 1.5rem;
-            padding: 8px;
-        }
     }
 
-/*mobile Menu page*/
-@media(max-width: 760px){
-    .card{
+    button {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+
+    .card {
         width: 90%;
         max-width: none;
         padding: 27px;
         object-position: center;
     }
 
-    .menu-img{
+    .menu-img {
         width: 100%;
         height: 100%;
         max-height: 500px;
@@ -440,58 +658,57 @@ footer{
         border-radius: 2px;
     }
 
-    .menu-cards{
+    .menu-cards {
         width: 90%;
         object-position: center;
         justify-content: center;
+        margin-bottom: 50px;
     }
-    h1{
+
+    h1 {
         font-size: 1.8rem;
         font-weight: bold;
     }
-}
 
-/*mobile about page*/
-
-@media(max-width: 760px){
-    .about .about-content{
+    .about .about-content {
         width: 90%;
         max-width: none;
         padding: 27px;
         object-position: center;
         margin-bottom: auto;
     }
-    .about img{
+
+    .about img {
         object-position: center;
         width: 90%;
         position: relative;
         display: block;
         justify-content: center;
     }
-    .about p{
+
+    .about p {
         font-weight: bold;
     }
-}
 
-/*mobile Contact page*/
-
-@media(max-width: 760px){
-    .contact .contact-content{
+    .contact .contact-content {
         width: 90%;
         max-width: none;
         padding: 27px;
         object-position: center;
         margin-bottom: auto;
     }
-    .Google-map iframe{
+
+    .Google-maps iframe {
         padding-right: 30px;
         display: block;
         height: 300px;
         width: 100%;
     }
 
-    .form input, .form textarea{
+    .form input,
+    .form textarea {
         width: 100%;
     }
 }
-}
+
+
