@@ -1,6 +1,6 @@
 // Initialize the current image index
 let currentIndex = 0;
-const images = document.querySelectorAll('.slide img'); // Get all images inside the slide container
+const images = document.querySelectorAll('.slide img');
 
 // Function to show the image based on index
 function showImage(index) {
@@ -8,13 +8,15 @@ function showImage(index) {
         console.warn("No images found in the .slide container");
         return;
     }
-    // Hide all images first
-    images.forEach(image => {
-        image.style.display = 'none'; // Hide all images
-    });
 
-    // Show the current image
-    images[index].style.display = 'block'; // Display the image at the current index
+    if (index < 0 || index >= images.length) {
+        console.warn("Index out of bounds");
+        return;
+    }
+    images.forEach(image => {
+        image.style.display = 'none';
+    });
+    images[index].style.display = 'block';
 }
 
 // Function to move images based on direction
@@ -29,11 +31,19 @@ showImage(currentIndex);
 
 
 function Menu() {
+    const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
-    nav.classList.toggle('active');
+    
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
 }
 
-// Initialize cart count from localStorage or set to 0
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav'); // Ensure nav is defined
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
 let cart = parseInt(localStorage.getItem('cartCount')) || 0;
 
 // Initialize cart items from localStorage or set to an empty array
@@ -178,37 +188,49 @@ function initializeCartDisplay() {
 
 // Attach event listeners after the DOM has loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the cart count on all pages
     initializeCartDisplay();
+    handleMenuPageLogic();
+    handleCartPageLogic();
+});
 
-    // Check if we are on the menu page by looking for menu-specific elements
+// Function to handle menu-specific logic
+function handleMenuPageLogic() {
     const menuElement = document.querySelector('.menu');
-    if (menuElement) {
-        // Initialize the cart count on page load
-        updateCartDisplay();
-
-        // Add event listeners to all "Add to Cart" buttons
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-                        button.addEventListener('click', addToCart);
-        });
-
-        // Add event listeners to all menu images
-        document.querySelectorAll('.menu img').forEach(image => {
-            image.addEventListener('click', addToCart);
-        });
-    } else {
+    if (!menuElement) {
         console.warn("Menu page elements not found. Skipping menu-specific logic.");
+        return;
     }
 
-    // Add event listener to the "Clear Cart" button if it exists
+    updateCartDisplay();
+
+    const menuContainer = document.querySelector('.menu');
+    if (menuContainer) {
+        menuContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('add-to-cart')) {
+                addToCart(event);
+            }
+        });
+    }
+
+    document.querySelectorAll('.menu img').forEach(image => {
+        image.addEventListener('click', addToCart);
+    });
+
     const clearCartButton = document.querySelector('.clear-cart');
     if (clearCartButton) {
         clearCartButton.addEventListener('click', clearCart);
     }
+}
 
-    // Render cart items if on cart.html
+// Function to handle cart-specific logic
+function handleCartPageLogic() {
     if (document.querySelector('#cart-table')) {
         renderCartItems();
     }
-});
+
+    const clearCartButton = document.querySelector('.clear-cart');
+    if (clearCartButton) {
+        clearCartButton.addEventListener('click', clearCart); 
+    } 
+}
 

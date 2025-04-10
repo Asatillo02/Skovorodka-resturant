@@ -1,0 +1,29 @@
+"""
+You are grafting different varieties of apple onto the same root tree can produce many different varieties of apples! Given the following TreeNode class, create the binary tree depicted below. The text representing each node should should be used as the value.
+
+The root, or topmost node in the tree TreeNode("Trunk") has been provided for you.
+
+             Trunk
+          /         \
+      Mcintosh   Granny Smith
+      /     \       /     \
+    Fuji   Opal   Crab   Gala
+
+"""
+
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.val = value
+        self.left = left
+        self.right = right
+    def __repr__(self):
+        return f"TreeNode({self.val})"
+def print_tree(node):
+    if node is not None: 
+        print_tree(node.left)
+        print(node.val)
+        print_tree(node.right)    
+
+root = TreeNode("Trunk")
+# Using print_tree() included at the top of this page
+print_tree(root)

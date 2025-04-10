@@ -22,16 +22,17 @@ nav ul{
 
 nav ul li{
     margin-right: 60px; 
+    max-width: 100%;
     display:inline-block;
     align-items: center;
 }
 
 nav ul li a{
-    color: #343131;
     text-decoration: none;
+    justify-content: center;
     padding: 10px 20px;
     background-color: #994C00;
-    color: #0a0808; /* Fixed missing semicolon */
+    color: #0a0808;
 }
 
 nav a:hover{
@@ -46,7 +47,7 @@ nav a:hover{
     align-items: center;
     flex-direction: column;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .cart a img {
@@ -97,17 +98,14 @@ nav a:hover{
     border-radius: 1px;
     height: 450px;
     width: auto;
-    overflow: hidden;
     display: flex; 
-    
     justify-content: center; 
   }
 
 
 /*changing menu display*/
 .menu{
-    padding: 20px 20px;
-    margin: 0 auto;
+    padding: 1px 20px;
     text-align: center;
     background-color: #752d2d;
     font-family: 'cursive','Times New Roman', Times, serif;
@@ -125,7 +123,7 @@ nav a:hover{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;
-    padding: 100px;
+    padding: 20px;
     margin-bottom: 70px;
     
 }
@@ -215,7 +213,6 @@ data{
 /*Gallery images*/
 
 .gallery {
-    text-align: center; /* Centers the content inside the gallery */
     padding: 20px;
     background-color: #994C00;
     display: flex; /* Use flexbox for centering */
@@ -232,27 +229,21 @@ data{
 
 .slide{
     border-radius: 8px;
-    position: relative; 
-    width: 80%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    margin: 0 120px;
+    position: relative;
+    overflow: hidden; 
+    width: 100%; /* Ensure all slides span the full width */
+    max-width: 1000px; /* Set a maximum width for consistency */
+    height: 450px; /* Standardize height for all slides */
+    margin: 0 auto; /* Center slides horizontally */
 }
 .slide img{
     width: 100%;
-    height: 50%;
-    border-radius: 10px;
-    border-style: groove;
-    border-color: black;
-    object-fit: cover;
-}
-.gallery img {
-    height: 450px; 
-    object-fit: cover;
-    margin: 10px; 
-    border-radius: 10px;
-}
+    height: 100%; /* Match the slide height */
+    object-fit: cover; /* Ensure the image covers the slide area */
+    border-radius: 10px; /* Keep consistent border radius */
+    border: 2px solid goldenrod;
+}   
+
 
 /*back & next buttons*/
 button {
@@ -286,15 +277,17 @@ button:hover {
     background-color: #752d2d;
     color: goldenrod;   
     text-align: center;
+    padding: 40px;
 }
 .about-content {
     background-color: #994C00; 
     border: 3px solid goldenrod;
-    padding: 20px; 
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     margin: 0 auto; 
-    width: 900px; 
+    width: 100%;
+    height: auto;
+    max-width: 900px; 
 }
 .about h1{
     font-size: 2.5rem;
@@ -308,7 +301,6 @@ button:hover {
     font-size: 1.4rem;
     line-height: 1.2;
     text-align: left;
-    margin: 0 auto;
     padding: 20px;
 }
 .hours p{
@@ -322,7 +314,8 @@ button:hover {
 .about img{
     border-radius: 10px;
     margin: 20px auto; 
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     height: auto;
 }
 
@@ -338,25 +331,33 @@ button:hover {
     background-color: #752d2d;
     color: goldenrod;
     text-align: center;
-    padding: 40px 30px;
+    padding: 40px 20px;
 }
-.contact .contact-content {
+
+.contact-content {
     background-color: #994C00; 
+    border: 3px solid goldenrod; 
     padding: 20px; 
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     margin: 0 auto; 
-    width: 900px; 
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
 }
 
 .Google-maps iframe{
     width: 100%;
-    height: 350px;
+    height: auto;
+    max-height: 400px;
     border: 4px solid goldenrod; 
     border-radius: 10px;
     box-shadow: #752d2d 0px 0px 10px;
-    margin: 0 auto;
-
+}
+.form .submit{
+    color: #994C00;
+    padding: 30px, 50px;
+    justify-content: center;
 }
 
 /*User Feedback Text Form*/
@@ -366,7 +367,7 @@ button:hover {
     font-weight: bold; 
     padding: 20px 20px;
     margin-top: 80px;
-    border: 3px solid goldenrod; 
+    border: 2px solid goldenrod; 
 }
 
 /*Social Media class*/
@@ -441,10 +442,12 @@ footer{
     font-style: italic;
     border-style: solid;
     border-width: 5px;
-    margin: 0;
     background-color: #752d2d; /* Same background as menu.html */
     color: goldenrod;
     font-family: 'cursive', 'Times New Roman', Times, serif;
+    height: 900px;
+    position: relative;
+    overflow: hidden;
 }
 .cart-total {
     justify-content: space-between;
@@ -572,143 +575,95 @@ footer{
 
 @media (max-width: 760px) {
     nav ul {
-        width: 100%;
+        max-width: 100%; /* Ensure full width */
+        height: auto; 
         text-align: center;
         display: none;
+        flex-direction: row; /* Stack items vertically */
+        padding: 10px 0px;
+    }
+
+    body{
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        background-color: black;
+    }
+    header{
+        padding: 15px;
     }
 
     nav.active ul {
         display: flex;
+        align-items: center;
+        position: absolute;
+        top: 80px; /* Adjust position below header */
+        left: 0;
+        right: 10px;
+        z-index: 1000; /* Ensure it appears above other elements */
     }
 
     nav ul li {
-        margin-bottom: 10px;
+        margin: 30px 0; /* Add vertical spacing between items */
     }
 
     .hamburger {
         display: block;
+        margin-left: auto; /* Align to the right */
+        font-size: 1.5rem; /* Adjust size for better visibility */
+        color: goldenrod; /* Match theme color */
+    }
+
+    .title-section {
+        padding: 10px; 
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
     }
 
     .hero {
-        width: auto;
-        height: 350px;
-        overflow: hidden;
-        justify-content: center;
-    }
-
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin: 0 auto;
-    }
-
-    .logo img {
-        height: 60px;
-        width: auto;
-    }
-
-    .slide {
-        margin: 0 15px;
-    }
-
-    .slide img {
-        width: auto;
-        height: 350px;
-        border: 1px solid black;
-        border-radius: 2px;
-        justify-content: center;
-    }
-
-    .gallery h1 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        top: 10px;
-        z-index: 10;
-        object-fit: cover;
-        color: goldenrod;
-    }
-
-    .gallery img {
+        height: auto;
         width: 100%;
-        height: 200px;
+        object-fit: cover;
+    }
+
+    .card img {
+        width: 100%; /* Adjust width for smaller screens */
+        height: auto; /* Maintain aspect ratio */
         margin: 10px 0;
-        border-radius: 10px;
-        border: 1px solid black;
-        object-fit: cover;
     }
 
-    button {
-        font-size: 1.5rem;
-        padding: 8px;
+    .card h2 {
+        font-size: 1.8rem; /* Reduce font size for smaller screens */
+        padding: 10px 20px; /* Adjust padding */
     }
+     .gallery .slide img{
+        overflow: hidden; 
 
-    .card {
-        width: 90%;
-        max-width: none;
-        padding: 27px;
-        object-position: center;
-    }
-
-    .menu-img {
-        width: 100%;
-        height: 100%;
-        max-height: 500px;
-        border: 1px solid black;
-        border-radius: 2px;
-    }
-
-    .menu-cards {
-        width: 90%;
-        object-position: center;
-        justify-content: center;
-        margin-bottom: 50px;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-        font-weight: bold;
-    }
-
-    .about .about-content {
-        width: 90%;
-        max-width: none;
-        padding: 27px;
-        object-position: center;
-        margin-bottom: auto;
-    }
-
-    .about img {
-        object-position: center;
-        width: 90%;
-        position: relative;
-        display: block;
-        justify-content: center;
-    }
-
-    .about p {
-        font-weight: bold;
     }
 
     .contact .contact-content {
-        width: 90%;
-        max-width: none;
-        padding: 27px;
-        object-position: center;
-        margin-bottom: auto;
+        padding: 10px;
+        margin: 0 10px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+    .contact-content iframe{
+        width: 100%;
+        height: 100%; 
+        position: relative;
     }
 
-    .Google-maps iframe {
-        padding-right: 30px;
-        display: block;
-        height: 300px;
-        width: 100%;
-    }
 
     .form input,
     .form textarea {
+        font-size: 1rem;
+        padding: 10px;
         width: 100%;
+        height: auto;
+    }
+
+    .about-content{
+        object-fit: cover;
+        justify-content: center;
     }
 }
-
-
