@@ -23,7 +23,7 @@ nav ul{
 nav ul li{
     margin-right: 60px; 
     max-width: 100%;
-    display:inline-block;
+    display: inline-block;
     align-items: center;
 }
 
@@ -37,7 +37,7 @@ nav ul li a{
 
 nav a:hover{
     background-color: #343131;
-    color:white;
+    color: white;
 }
 /*shopping cart*/
 .cart{
@@ -56,7 +56,6 @@ nav a:hover{
     margin-left: auto;
     margin-bottom: 25px;
     cursor: pointer;
-    padding: px;
     border-radius: 50%;
     object-fit: cover;
 }
